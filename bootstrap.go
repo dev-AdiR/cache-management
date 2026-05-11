@@ -1,8 +1,8 @@
 package main
 
 import (
-	enums "Client-Management/Enums"
-	types "Client-Management/Types"
+	enums "github.com/dev-AdiR/cache-management/Enums"
+	types "github.com/dev-AdiR/cache-management/Types"
 )
 
 type App struct {

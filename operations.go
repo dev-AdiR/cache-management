@@ -1,9 +1,10 @@
 package main
 
 import (
-	types "Client-Management/Types"
 	"context"
 	"time"
+
+	types "github.com/dev-AdiR/cache-management/Types"
 )
 
 type Cache struct {
