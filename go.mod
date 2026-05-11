@@ -1,4 +1,4 @@
-module github.com/dev-AdiR/Cache-Management
+module github.com/dev-AdiR/cache-management
 
 go 1.26.2
 
