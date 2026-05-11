@@ -1,4 +1,4 @@
-package main
+package env
 
 import (
 	"os"
@@ -6,14 +6,14 @@ import (
 	"github.com/joho/godotenv"
 )
 
-type Environment struct {
+type environment struct {
 	ClientUrl string
 }
 
-func LoadEnv() *Environment {
+func LoadEnv() *environment {
 	_ = godotenv.Load()
 
-	return &Environment{
+	return &environment{
 		ClientUrl: os.Getenv("Client_URL"),
 	}
 }

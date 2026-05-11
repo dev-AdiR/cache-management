@@ -1,6 +1,6 @@
 package types
 
-import enums "github.com/dev-AdiR/cache-management/Enums"
+import enums "github.com/dev-AdiR/cache-management/Internal/Enums"
 
 const (
 	Redis = iota
