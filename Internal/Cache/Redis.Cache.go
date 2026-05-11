@@ -1,13 +1,14 @@
-package types
+package cache
 
 import (
 	"context"
 	"time"
 
+	types "github.com/dev-AdiR/cache-management/Types"
 	"github.com/redis/go-redis/v9"
 )
 
-func RegisterRedisClient(redisUrl string) Client {
+func RegisterRedisClient(redisUrl string) types.Client {
 	rdp := redis.NewClient(&redis.Options{
 		Addr: redisUrl,
 	})
