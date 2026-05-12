@@ -13,7 +13,6 @@ func RegisterRedisClient(redisUrl string) types.Client {
 		Addr: redisUrl,
 	})
 
-	// rdp.Close()
 	return &RedisClient{
 		Client: rdp,
 	}
@@ -24,6 +23,7 @@ type RedisClient struct {
 }
 
 func (redis *RedisClient) Set(ctx context.Context, key string, value []byte, expiration time.Duration) error {
+
 	err := redis.Client.Set(ctx, key, value, expiration).Err()
 	if err != nil {
 		return err
@@ -37,4 +37,8 @@ func (redis *RedisClient) Get(ctx context.Context, key string) ([]byte, error) {
 
 func (redis *RedisClient) Close() error {
 	return redis.Client.Close()
+}
+
+func (redis *RedisClient) Eval(ctx context.Context, script string, keys []string, args ...interface{}) any {
+	return redis.Client.Eval(ctx, script, keys, args...)
 }
